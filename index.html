@@ -335,11 +335,10 @@
   .popup-card{
     position:relative;
     background:var(--cream);
-    border-radius:8px;
-    max-width:420px;
+    border-radius:10px;
+    max-width:360px;
     width:100%;
-    padding:44px 36px 36px;
-    text-align:center;
+    overflow:hidden;
     box-shadow:0 30px 70px -20px rgba(0,0,0,.45);
     transform:translateY(14px) scale(.97);
     transition:transform .25s ease;
@@ -347,46 +346,24 @@
   }
   .popup-overlay.is-open .popup-card{transform:translateY(0) scale(1);}
   .popup-close{
-    position:absolute;top:14px;right:14px;
+    position:absolute;top:10px;right:10px;
     width:32px;height:32px;
     border-radius:50%;
-    background:transparent;
+    background:rgba(251,246,234,.9);
     border:1px solid var(--line);
     display:flex;align-items:center;justify-content:center;
-    color:var(--ink-soft);
+    color:var(--ink);
     font-size:1rem;
     line-height:1;
     padding:0;
+    z-index:2;
   }
-  .popup-close:hover{border-color:var(--ink);color:var(--ink);}
-  .popup-badge{
-    width:64px;height:64px;
-    border-radius:50%;
-    border:2px dashed var(--chili);
-    display:flex;align-items:center;justify-content:center;
-    margin:0 auto 18px;
-    font-family:'Fraunces',serif;font-weight:700;color:var(--chili);font-size:1.1rem;
-  }
+  .popup-close:hover{border-color:var(--ink);}
   .popup-photo{
-    width:96px;height:96px;
-    border-radius:50%;
-    object-fit:cover;
-    margin:0 auto 18px;
-    border:3px solid var(--card);
-    box-shadow:0 0 0 3px var(--chili);
-  }
-  .popup-eyebrow{
-    text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;font-weight:600;
-    color:var(--chili);margin-bottom:.6em;
-  }
-  .popup-card h3{font-size:1.5rem;margin-bottom:.4em;}
-  .popup-card p{font-size:.95rem;max-width:32ch;margin-inline:auto;margin-bottom:1.6em;}
-  .popup-card .btn{width:100%;justify-content:center;}
-  .popup-fine{
-    display:block;margin-top:1em;
-    font-size:.75rem;color:var(--ink-soft);
-    background:none;border:none;text-decoration:underline;cursor:pointer;
-    padding:0;
+    display:block;
+    width:100%;
+    height:auto;
+    cursor:pointer;
   }
 
   /* ---------- WHATSAPP FLOAT ---------- */
@@ -437,7 +414,7 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-primary" href="https://wa.me/910000000000?text=I%20want%20to%20order" target="_blank" rel="noopener">Order on WhatsApp</a>
+      <a class="btn btn-primary" href="https://wa.link/6muuoj" target="_blank" rel="noopener">Order on WhatsApp</a>
     </div>
   </div>
 </header>
@@ -449,7 +426,7 @@
       <h1>Real Indian food, <em>made to order.</em></h1>
       <p class="lead">Freshly prepared dishes, authentic recipes and quality ingredients — a comfortable dining experience for families, friends and food lovers.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="https://wa.me/910000000000?text=I%20want%20to%20order" target="_blank" rel="noopener">🎉 Get 10% Off — Order Now</a>
+        <a class="btn btn-primary" href="https://wa.link/6muuoj" target="_blank" rel="noopener">🎉 Get 10% Off — Order Now</a>
         <a class="btn btn-ghost" href="#reviews">See Reviews</a>
       </div>
     </div>
@@ -550,7 +527,7 @@
     <h2>Order now &amp; get 10% off</h2>
     <p>Order your favorite dishes directly through WhatsApp and enjoy a special discount on your first order.</p>
     <div style="margin-top:2em;">
-      <a class="btn btn-primary" href="https://wa.me/910000000000?text=I%20want%20to%20order" target="_blank" rel="noopener">💬 Order Now on WhatsApp</a>
+      <a class="btn btn-primary" href="https://wa.link/6muuoj" target="_blank" rel="noopener">💬 Order Now on WhatsApp</a>
     </div>
   </div>
 </section>
@@ -576,19 +553,16 @@
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/910000000000?text=I%20want%20to%20order" target="_blank" rel="noopener" aria-label="Order on WhatsApp">
+<a class="wa-float" href="https://wa.link/6muuoj" target="_blank" rel="noopener" aria-label="Order on WhatsApp">
   <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.3 2 2 8.3 2 16c0 2.5.7 4.9 1.9 7L2 30l7.2-1.9c2 1.1 4.3 1.7 6.8 1.7 7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.5c-2.2 0-4.4-.6-6.2-1.7l-.4-.3-4.3 1.1 1.1-4.2-.3-.4C4.6 20.2 4 18.1 4 16 4 9.4 9.4 4 16 4s12 5.4 12 12-5.4 11.5-12 11.5zm6.5-8.6c-.4-.2-2.1-1-2.4-1.2-.3-.1-.6-.2-.8.2-.2.4-.9 1.2-1.1 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.6.2-.2.3-.4.4-.6.1-.2.1-.5 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.8 0 1.6 1.2 3.2 1.4 3.4.2.2 2.4 3.7 5.8 5.1.8.3 1.5.5 2 .7.8.3 1.6.2 2.2.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.1-.3-.2-.7-.4z"/></svg>
 </a>
 
-<div class="popup-overlay" id="promoPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+<div class="popup-overlay" id="promoPopup" role="dialog" aria-modal="true" aria-label="Special offer">
   <div class="popup-card">
     <button class="popup-close" id="popupClose" aria-label="Close popup">✕</button>
-    <img class="popup-photo" src="popup.jpg" alt="Founder of Tandoor & Co.">
-    <div class="popup-eyebrow">A personal welcome</div>
-    <h3 id="popupTitle">Hi, thanks for stopping by</h3>
-    <p>I'd love for you to try us. Order through WhatsApp today and get 10% off your first order.</p>
-    <a class="btn btn-primary" href="https://wa.me/910000000000?text=I%20want%20to%20order" target="_blank" rel="noopener">💬 Claim 10% Off on WhatsApp</a>
-    <button class="popup-fine" id="popupDismiss">No thanks, maybe later</button>
+    <a href="https://wa.link/6muuoj" target="_blank" rel="noopener">
+      <img class="popup-photo" src="popup-photo.png" alt="Order on WhatsApp">
+    </a>
   </div>
 </div>
 
@@ -596,7 +570,6 @@
   (function(){
     var overlay = document.getElementById('promoPopup');
     var closeBtn = document.getElementById('popupClose');
-    var dismissBtn = document.getElementById('popupDismiss');
     var shown = false;
 
     function openPopup(){
@@ -612,7 +585,6 @@
     setTimeout(openPopup, 4000);
 
     closeBtn.addEventListener('click', closePopup);
-    dismissBtn.addEventListener('click', closePopup);
     overlay.addEventListener('click', function(e){
       if(e.target === overlay) closePopup();
     });
