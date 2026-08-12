@@ -1,1 +1,24 @@
+<div class="popup-overlay popup-hidden" id="offerPopup">
 
+  <div class="popup-box">
+
+    <button class="popup-close" onclick="closePopup()">×</button>
+
+    <img
+      src="popup.jpg"
+      alt="Special Offer"
+      class="popup-image"
+    >
+
+    <a
+      class="popup-button"
+      href="https://wa.me/910000000000?text=I%20want%20to%20order"
+      target="_blank"
+      rel="noopener"
+    >
+      Order Now on WhatsApp
+    </a>
+
+  </div>
+
+</div>
