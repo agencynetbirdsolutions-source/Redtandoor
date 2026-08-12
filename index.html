@@ -9,6 +9,46 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  .popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  padding: 20px;
+}
+
+.popup-content {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.popup-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.close-popup {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 10;
+}
   :root{
     --cream:#FBF6EA;
     --cream-deep:#F3E9D4;
@@ -26,7 +66,25 @@
 
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{
+  <script>
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
+window.onload = function() {
+  setTimeout(function() {
+    document.getElementById("popup").style.display = "flex";
+  }, 1500);
+};
+</script>
+  body
+  <div id="popup" class="popup">
+  <div class="popup-content">
+    <button onclick="closePopup()" class="close-popup">×</button>
+    <img src="popup.jpg" alt="Special Offer">
+  </div>
+</div>
+  {
     margin:0;
     background:var(--cream);
     color:var(--ink);
