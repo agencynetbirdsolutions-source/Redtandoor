@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ren Tandoor - Restaurant</title>
+    <title>Exclusive Bonus Offer - Premium Products</title>
     <style>
         * {
             margin: 0;
@@ -12,453 +12,542 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: #0a0a0a;
-            color: #fff;
-            overflow-x: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
         }
 
-        /* Header */
         header {
-            background: linear-gradient(135deg, #1a0000 0%, #330000 100%);
-            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 15px rgba(255, 51, 0, 0.3);
-            border-bottom: 3px solid #ff3300;
-            animation: slideDown 0.6s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .logo {
-            font-size: 32px;
+            font-size: 24px;
             font-weight: bold;
-            color: #ffcc00;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 8px rgba(255, 51, 0, 0.8);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .logo span {
-            color: #ff3300;
+        .nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
         }
 
-        .header-btn {
-            background: linear-gradient(135deg, #ff3300, #ff6600);
+        .nav a {
             color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-size: 14px;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav a:hover {
+            opacity: 0.8;
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
             font-weight: bold;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 51, 0, 0.4);
-            letter-spacing: 1px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .header-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(255, 51, 0, 0.6);
-        }
-
-        .header-btn:active {
-            transform: scale(0.98);
+        .whatsapp-btn:hover {
+            background: #20ba5a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(51, 0, 0, 0.9) 0%, rgba(26, 0, 0, 0.9) 100%),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(255,51,0,0.1)"/><circle cx="80" cy="50" r="1.5" fill="rgba(255,204,0,0.1)"/><circle cx="50" cy="80" r="1" fill="rgba(255,51,0,0.1)"/></svg>');
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 60px 30px;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 5px solid #ffcc00;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(255, 102, 0, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
             text-align: center;
-            max-width: 900px;
-            animation: fadeInUp 1s ease-out;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero h1 {
-            font-size: 72px;
-            font-weight: bold;
+        .hero-content h1 {
+            font-size: 48px;
             margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+            font-weight: 700;
         }
 
-        .hero h1 .order {
-            color: #ffffff;
-            display: block;
-            margin: 10px 0;
-            animation: pulse 2s ease-in-out infinite;
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
         }
 
-        .hero h1 .now {
-            color: #ffcc00;
-            font-size: 80px;
-            display: block;
-            text-shadow: 0 0 30px rgba(255, 204, 0, 0.5),
-                         0 0 60px rgba(255, 102, 0, 0.3);
-            animation: pulse 2s ease-in-out infinite;
+        .bonus-badge {
+            display: inline-block;
+            background: #ff6b6b;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0%, 100% {
-                text-shadow: 0 0 30px rgba(255, 204, 0, 0.5),
-                             0 0 60px rgba(255, 102, 0, 0.3);
-                transform: scale(1);
-            }
-            50% {
-                text-shadow: 0 0 50px rgba(255, 204, 0, 0.8),
-                             0 0 80px rgba(255, 102, 0, 0.5);
-                transform: scale(1.02);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
-        .tagline {
-            font-size: 28px;
-            color: #ffcc00;
-            margin: 30px 0;
-            font-style: italic;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
         }
 
-        .hero-description {
-            font-size: 18px;
-            color: #cccccc;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .hero-btn {
-            background: linear-gradient(135deg, #ff3300, #ff6600);
+        .btn-primary {
+            background: #ff6b6b;
             color: white;
+            padding: 16px 40px;
             border: none;
-            padding: 16px 50px;
-            border-radius: 50px;
+            border-radius: 30px;
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(255, 51, 0, 0.5);
-            letter-spacing: 2px;
-            animation: slideInUp 0.8s ease-out 0.2s both;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-btn:hover {
+        .btn-primary:hover {
+            background: #ff5252;
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 51, 0, 0.7);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
         }
 
-        .hero-btn:active {
-            transform: translateY(-1px);
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            padding: 16px 40px;
+            border: 2px solid white;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: transparent;
+            color: white;
         }
 
         /* Features Section */
         .features {
-            background: linear-gradient(135deg, #1a0000 0%, #330000 100%);
-            padding: 80px 30px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            border-bottom: 5px solid #ff3300;
+            padding: 80px 20px;
+            background: white;
         }
 
-        .feature {
+        .section-title {
             text-align: center;
-            animation: fadeIn 0.8s ease-out;
-            transition: transform 0.3s ease;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #333;
         }
 
-        .feature:hover {
-            transform: translateY(-10px);
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
         }
 
         .feature-icon {
-            font-size: 60px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 10px rgba(255, 204, 0, 0.4));
+            font-size: 48px;
+            margin-bottom: 15px;
         }
 
-        .feature h3 {
+        .feature-card h3 {
             font-size: 20px;
-            margin-bottom: 10px;
-            color: #ffcc00;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 15px;
+            color: #333;
         }
 
-        .feature p {
-            color: #cccccc;
+        .feature-card p {
+            color: #666;
             font-size: 14px;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, rgba(51, 0, 0, 0.95) 0%, rgba(26, 0, 0, 0.95) 100%);
-            padding: 80px 30px;
+        /* Image Banner Section */
+        .image-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             text-align: center;
-            border-bottom: 5px solid #ffcc00;
         }
 
-        .cta-section h2 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: fadeInDown 0.8s ease-out;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .cta-section p {
-            font-size: 18px;
-            color: #cccccc;
-            margin-bottom: 40px;
+        .promo-image {
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            width: 100%;
+            margin: 0 auto 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
         }
 
-        .cta-buttons {
+        .image-section a:hover .promo-image {
+            transform: scale(1.02);
+        }
+
+        .image-section p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .services-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 900px;
-            margin: 0 auto;
+            gap: 25px;
+            margin-top: 40px;
         }
 
-        .cta-btn {
-            background: linear-gradient(135deg, #ffcc00, #ff9900);
-            color: #000;
-            border: none;
-            padding: 18px 40px;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
-            letter-spacing: 1px;
-            animation: slideInUp 0.8s ease-out 0.4s both;
+        .service-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
         }
 
-        .cta-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 204, 0, 0.6);
+        .service-icon {
+            font-size: 32px;
+            min-width: 40px;
         }
 
-        .cta-btn:active {
-            transform: scale(0.98);
+        .service-item h4 {
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .contact-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
         }
 
         /* Footer */
         footer {
-            background: #000000;
-            padding: 30px;
-            text-align: center;
-            border-top: 3px solid #ff3300;
-            color: #999;
-            font-size: 14px;
-        }
-
-        /* Discount Badge */
-        .discount-badge {
-            background: linear-gradient(135deg, #ff3300, #ff6600);
+            background: #1a1a1a;
             color: white;
-            padding: 20px 30px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            margin: 40px 30px;
-            border-radius: 10px;
-            box-shadow: 0 6px 20px rgba(255, 51, 0, 0.4);
-            animation: bounce 2s ease-in-out infinite;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            opacity: 0.8;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .logo {
-                font-size: 24px;
+            .hero-content h1 {
+                font-size: 32px;
             }
 
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero h1 .now {
-                font-size: 56px;
-            }
-
-            .tagline {
-                font-size: 20px;
-            }
-
-            .hero-description {
+            .hero-content p {
                 font-size: 16px;
             }
 
-            header {
+            .section-title {
+                font-size: 28px;
+            }
+
+            .nav {
+                gap: 15px;
+            }
+
+            .header-content {
                 flex-direction: column;
                 gap: 15px;
             }
 
-            .header-btn {
-                padding: 10px 20px;
-                font-size: 12px;
+            .features-grid {
+                grid-template-columns: 1fr;
             }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Accessibility */
+        a:focus, button:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="logo">Ren <span>Tandoor</span></div>
-        <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" target="_blank" class="header-btn">Order On WhatsApp</a>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span>🎁</span>
+                    <span>Bonus Store</span>
+                </div>
+                <nav class="nav">
+                    <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" class="whatsapp-btn">
+                        💬 WhatsApp NOW
+                    </a>
+                </nav>
+            </div>
+        </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>
-                <span class="order">ORDER</span>
-                <span class="now">NOW!</span>
-            </h1>
-            <p class="tagline">Good Food, Great Mood!</p>
-            <p class="hero-description">Delicious Food, Delivered Fast. Experience authentic tandoor cuisine at your doorstep with our speedy delivery service.</p>
-            <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" target="_blank" class="hero-btn">Order On WhatsApp</a>
+        <div class="container">
+            <div class="hero-content">
+                <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" style="text-decoration: none;">
+                    <div class="bonus-badge" style="cursor: pointer;">🎉 LIMITED TIME OFFER 🎉</div>
+                </a>
+                <h1>Unlock Your Exclusive Bonus Now!</h1>
+                <p>Join thousands of satisfied customers and claim your special bonus today</p>
+                <div class="hero-cta">
+                    <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" class="btn-primary">
+                        ✨ I Want Bonus Now
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
-
-    <!-- Discount Banner -->
-    <div class="discount-badge">
-        🎉 Get 10% Discount - Limited Time Offer! 🎉
-    </div>
 
     <!-- Features Section -->
-    <section class="features">
-        <div class="feature">
-            <div class="feature-icon">🍽️</div>
-            <h3>Delicious Food</h3>
-            <p>Authentic tandoor recipes prepared with premium ingredients</p>
-        </div>
-        <div class="feature">
-            <div class="feature-icon">🏍️</div>
-            <h3>Fast & Safe Delivery</h3>
-            <p>Quick delivery right to your doorstep</p>
-        </div>
-        <div class="feature">
-            <div class="feature-icon">⭐</div>
-            <h3>Best Quality Ingredients</h3>
-            <p>We use only the finest quality spices and ingredients</p>
-        </div>
-        <div class="feature">
-            <div class="feature-icon">💬</div>
-            <h3>24/7 Customer Support</h3>
-            <p>Always here to help you with any questions</p>
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Processing</h3>
+                    <p>Get your bonus activated within minutes. Quick and hassle-free process.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>100% Secure</h3>
+                    <p>Your information is safe with us. Trusted by thousands of users.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Best Value</h3>
+                    <p>Maximum bonus with minimum requirements. Incredible deals just for you.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>24/7 Support</h3>
+                    <p>Our customer support team is always ready to help you succeed.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Easy Claim</h3>
+                    <p>Simple steps to claim your bonus. No complicated procedures.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌟</div>
+                    <h3>Exclusive Rewards</h3>
+                    <p>Extra benefits and rewards for loyal customers. Keep earning more!</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <h2>Don't Miss Out!</h2>
-        <p>Order your favorite tandoor dishes now and enjoy authentic flavors delivered hot and fresh to your door.</p>
-        <div class="cta-buttons">
-            <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" target="_blank" class="cta-btn">Order On WhatsApp</a>
-            <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" target="_blank" class="cta-btn">Order On WhatsApp</a>
+    <!-- Image Banner Section -->
+    <section class="image-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Your Bonus Awaits</h2>
+            <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" style="text-decoration: none;">
+                <img src="data:image/svg+xml,%3Csvg width='600' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='400' fill='url(%23grad1)'/%3E%3Ctext x='50%25' y='40%25' font-size='60' font-weight='bold' fill='white' text-anchor='middle'%3E🎁 BONUS%3C/text%3E%3Ctext x='50%25' y='60%25' font-size='40' fill='%23FFD700' text-anchor='middle' font-weight='bold'%3E+ SPECIAL OFFER%3C/text%3E%3Ctext x='50%25' y='80%25' font-size='24' fill='white' text-anchor='middle'%3E✨ Click Here to Claim ✨%3C/text%3E%3C/svg%3E" alt="Click to Get Your Bonus" class="promo-image">
+            </a>
+            <p>👆 Click the image or button below to get your bonus instantly via WhatsApp</p>
+            <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" class="btn-primary">
+                ✨ Get My Bonus - Click Here
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <div class="service-icon">📱</div>
+                    <div>
+                        <h4>Premium Products</h4>
+                        <p>Access to exclusive products and special offers</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">⚙️</div>
+                    <div>
+                        <h4>Technical Support</h4>
+                        <p>Expert guidance and customer support available 24/7</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🎁</div>
+                    <div>
+                        <h4>Bonus Program</h4>
+                        <p>Earn and unlock exclusive rewards and bonuses</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">⭐</div>
+                    <div>
+                        <h4>Quality Guarantee</h4>
+                        <p>100% satisfaction guaranteed on all offers</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🚀</div>
+                    <div>
+                        <h4>Fast Delivery</h4>
+                        <p>Quick activation and instant bonus processing</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">💎</div>
+                    <div>
+                        <h4>VIP Benefits</h4>
+                        <p>Special privileges for our premium members</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Ready to Claim Your Bonus?</h2>
+            <p>Don't miss out! Get in touch with us on WhatsApp and start earning your benefits today.</p>
+            <div class="contact-cta">
+                <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" class="btn-primary">
+                    💬 Chat on WhatsApp
+                </a>
+                <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" class="btn-secondary">
+                    📞 Get Support
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Ren Tandoor Restaurant. All rights reserved. | Good Food, Great Mood!</p>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#features">Privacy Policy</a>
+                <a href="#services">Terms & Conditions</a>
+                <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now">Contact Us</a>
+                <a href="#features">FAQ</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bonus Store. All Rights Reserved.</p>
+                <p style="margin-top: 10px; font-size: 14px;">For inquiries, contact us via WhatsApp 💬</p>
+            </div>
+        </div>
     </footer>
-
 </body>
 </html>
