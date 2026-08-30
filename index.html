@@ -17,37 +17,135 @@
             color: #333;
             background: #f8f9fa;
         }
-        <!-- WhatsApp Popup Banner -->
-<div class="popup-overlay" id="whatsappPopup">
-    <div class="popup-box">
 
-        <button class="popup-close" onclick="closePopup()">×</button>
+        /* Pop Banner */
+        .pop-banner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 40px;
+            z-index: 1000;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 500px;
+            width: 90%;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            animation: slideIn 0.5s ease-out;
+        }
 
-        <a href="https://wa.me/15554703730?text=I%20Want%20Bonus%20Now">
+        @keyframes slideIn {
+            from {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
 
-            <div class="popup-banner">
+        .pop-banner-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            position: relative;
+        }
 
-                <div class="popup-icon">🎁</div>
+        .close-banner {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            color: #667eea;
+        }
 
-                <h2>Exclusive Bonus!</h2>
+        .close-banner:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
 
-                <p>
-                    Don't miss your special offer.
-                    Contact us now on WhatsApp.
-                </p>
+        .pop-banner-text {
+            text-align: center;
+            margin-bottom: 10px;
+        }
 
-                <div class="popup-whatsapp">
-                    💬 WhatsApp Now
-                </div>
+        .pop-banner-text h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
 
-            </div>
+        .pop-banner-text p {
+            font-size: 16px;
+            opacity: 0.95;
+            margin: 8px 0;
+        }
 
-        </a>
+        .banner-btn {
+            background: #ff6b6b;
+            color: white;
+            padding: 14px 40px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+        }
 
-    </div>
-</div>
+        .banner-btn:hover {
+            background: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+        }
 
-        header {
+        @media (max-width: 768px) {
+            .pop-banner {
+                padding: 30px 20px;
+                max-width: 90vw;
+            }
+
+            .close-banner {
+                top: 10px;
+                right: 10px;
+                width: 35px;
+                height: 35px;
+                font-size: 20px;
+            }
+
+            .pop-banner-text h3 {
+                font-size: 24px;
+            }
+
+            .pop-banner-text p {
+                font-size: 14px;
+            }
+
+            .banner-btn {
+                padding: 12px 30px;
+                font-size: 14px;
+            }
+        }
+
+        /* Header */
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 20px 0;
@@ -408,7 +506,39 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Pop Banner -->
+    <div id="popBanner" class="pop-banner">
+        <div class="pop-banner-content">
+            <button onclick="closeBanner()" class="close-banner">✕</button>
+            <div class="pop-banner-text">
+                <h3>🎁 SPECIAL OFFER!</h3>
+                <p>Contact us on WhatsApp for your exclusive bonus</p>
+                <p style="font-weight: bold; font-size: 18px; margin: 10px 0;">📱 +1 (555) 448-8038</p>
+            </div>
+            <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" class="banner-btn">Chat Now</a>
+        </div>
+    </div>
+
+    <script>
+        // Pop banner auto-show
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('popBanner').style.display = 'flex';
+            }, 1000);
+        });
+
+        function closeBanner() {
+            document.getElementById('popBanner').style.display = 'none';
+        }
+
+        // Show banner again after 30 seconds if closed
+        setInterval(function() {
+            if(document.getElementById('popBanner').style.display === 'none') {
+                document.getElementById('popBanner').style.display = 'flex';
+            }
+        }, 30000);
+    </script>
+
     <header>
         <div class="container">
             <div class="header-content">
@@ -417,7 +547,7 @@
                     <span>Bonus Store</span>
                 </div>
                 <nav class="nav">
-                    <a href="https://wa.me/15554703730?text=I%20Want%20Bonus%20Now" class="whatsapp-btn">
+                    <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" class="whatsapp-btn">
                         💬 WhatsApp NOW
                     </a>
                 </nav>
@@ -429,13 +559,13 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <a href="https://wa.me/15554703730?text=I%20Want%20Bonus%20Now" style="text-decoration: none;">
+                <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" style="text-decoration: none;">
                     <div class="bonus-badge" style="cursor: pointer;">🎉 LIMITED TIME OFFER 🎉</div>
                 </a>
                 <h1>Unlock Your Exclusive Bonus Now!</h1>
                 <p>Join thousands of satisfied customers and claim your special bonus today</p>
                 <div class="hero-cta">
-                    <a href="https://wa.me/15554703730?text=I%20Want%20Bonus%20Now" class="btn-primary">
+                    <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" class="btn-primary">
                         ✨ I Want Bonus Now
                     </a>
                 </div>
@@ -486,11 +616,11 @@
     <section class="image-section">
         <div class="container">
             <h2 class="section-title" style="color: white;">Your Bonus Awaits</h2>
-            <a href="https://wa.me/15554703730?text=I%20Want%20Bonus%20Now" style="text-decoration: none;">
+            <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" style="text-decoration: none;">
                 <img src="data:image/svg+xml,%3Csvg width='600' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='400' fill='url(%23grad1)'/%3E%3Ctext x='50%25' y='40%25' font-size='60' font-weight='bold' fill='white' text-anchor='middle'%3E🎁 BONUS%3C/text%3E%3Ctext x='50%25' y='60%25' font-size='40' fill='%23FFD700' text-anchor='middle' font-weight='bold'%3E+ SPECIAL OFFER%3C/text%3E%3Ctext x='50%25' y='80%25' font-size='24' fill='white' text-anchor='middle'%3E✨ Click Here to Claim ✨%3C/text%3E%3C/svg%3E" alt="Click to Get Your Bonus" class="promo-image">
             </a>
             <p>👆 Click the image or button below to get your bonus instantly via WhatsApp</p>
-            <a href="https://wa.me/15554703730?text=I%20Want%20Bonus%20Now" class="btn-primary">
+            <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" class="btn-primary">
                 ✨ Get My Bonus - Click Here
             </a>
         </div>
@@ -553,10 +683,10 @@
             <h2>Ready to Claim Your Bonus?</h2>
             <p>Don't miss out! Get in touch with us on WhatsApp and start earning your benefits today.</p>
             <div class="contact-cta">
-                <a href="https://wa.me/15554703730?text=I%20Want%20Bonus%20Now" class="btn-primary">
+                <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" class="btn-primary">
                     💬 Chat on WhatsApp
                 </a>
-                <a href="https://wa.me/15554703730?text=I%20Want%20Bonus%20Now" class="btn-secondary">
+                <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now" class="btn-secondary">
                     📞 Get Support
                 </a>
             </div>
@@ -569,7 +699,7 @@
             <div class="footer-links">
                 <a href="#features">Privacy Policy</a>
                 <a href="#services">Terms & Conditions</a>
-                <a href="https://wa.me/15554703730?text=I%20Want%20Bonus%20Now">Contact Us</a>
+                <a href="https://wa.me/15554488038?text=I%20want%20Bonus%20Now">Contact Us</a>
                 <a href="#features">FAQ</a>
             </div>
             <div class="footer-bottom">
